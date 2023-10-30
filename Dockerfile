@@ -1,7 +1,6 @@
 FROM jenkins/ssh-agent:alpine-jdk17 as ssh-agent
 
 RUN apk add --no-cache \
-    node \
     npm
 
 RUN curl -fsSL https://get.pulumi.com | sh
