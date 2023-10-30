@@ -73,8 +73,11 @@ RUN apk add --no-cache \
     netcat-openbsd \
     openssh \
     patch \
-    python3 \
-    curl
+    curl \
+    node \
+    npm
+
+RUN curl -fsSL https://get.pulumi.com | sh
 
 # setup SSH server
 RUN sed -i /etc/ssh/sshd_config \
