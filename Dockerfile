@@ -1,4 +1,5 @@
-FROM jenkins/ssh-agent:debian-jdk17 as ssh-agent
+FROM jenkins/ssh-agent:alpine-jdk17 as ssh-agent
+
 RUN apk add --no-cache \
     node \
     npm
