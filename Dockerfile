@@ -5,4 +5,6 @@ RUN apk add --no-cache \
 
 RUN curl -fsSL https://get.pulumi.com | sh
 
+RUN pulumi version
+
 #COPY --chown=jenkins mykey "${JENKINS_AGENT_HOME}"/.ssh/mykey
