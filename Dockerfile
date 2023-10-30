@@ -72,7 +72,9 @@ RUN apk add --no-cache \
     musl-locales \
     netcat-openbsd \
     openssh \
-    patch
+    patch \
+    python3 \
+    curl
 
 # setup SSH server
 RUN sed -i /etc/ssh/sshd_config \
@@ -98,10 +100,6 @@ WORKDIR "${JENKINS_AGENT_HOME}"
 # allow environment variables to be sourced (see `sed` command related to `PermitUserEnvironment`)
 RUN echo "PATH=${PATH}" >> ${JENKINS_AGENT_HOME}/.ssh/environment
 COPY setup-sshd /usr/local/bin/setup-sshd
-
-RUN apk add --no-cache \
-    python3 \
-    curl
 
 EXPOSE 22
 
