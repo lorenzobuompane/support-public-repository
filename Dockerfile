@@ -5,9 +5,9 @@ RUN apk add --no-cache \
     curl \
     libc6-compat
 
-ENV PATH=$PATH:/root/.pulumi/bin
-
 RUN curl -fsSL https://get.pulumi.com | sh
+
+ENV PATH=$PATH:/root/.pulumi/bin
 
 RUN pulumi version
 
